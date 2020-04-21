@@ -37,12 +37,13 @@ def extract_face(filename, required_size=(48, 48)):
 
 
 # load the photo and extract the face
-pixels = extract_face('your image path')
+pixels = extract_face('Input Image Path')
 count = 0
 for i in pixels:
 	count+=1
 	j = cv2.cvtColor(i,cv2.COLOR_BGR2RGB)
 	cv2.imshow('f',j)
 	cv2.waitKey(0)
-	cv2.imwrite('your output image path.png'.format(count),j)
+	#Image can have more than one face,so this will write the image name as count_no. of face
+	cv2.imwrite('Output Image Path.png{}'.format(count),j)
 	
